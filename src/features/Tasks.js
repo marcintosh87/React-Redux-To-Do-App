@@ -6,7 +6,7 @@ export const taskSlice = createSlice({
   initialState: { value: FakeTasks },
   reducers: {
     addTask: (state, action) => {
-      state.value.push(action.payload);
+      state.value.unshift(action.payload);
     },
     deleteTask: (state, action) => {
       state.value = state.value.filter((task) => task.id !== action.payload.id);

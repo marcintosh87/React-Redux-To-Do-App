@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Checkbox,
   IconButton,
@@ -23,8 +22,13 @@ export default function TaskCard({ completed, description, id }) {
     <>
       <Paper
         elevation={1}
-        sx={{ padding: 3, width: "90%", marginX: 5 }}
-        className={"task_entry"}
+        sx={{
+          padding: 3,
+          width: "90%",
+          marginX: 5,
+          backgroundColor: !completed ? "white" : "gray",
+        }}
+        className={`task_entry ${completed ? "slide-bottom" : "slide-in-top"}`}
       >
         <Checkbox
           label="done"

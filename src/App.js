@@ -12,9 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import TaskCard from "./TaskCard";
-
-// graphic imports
 import logo from "./img/logos/React To Do-logos_transparent.png";
+import girlDecor from "./img/girl_sitting.png";
 
 function App() {
   const tasks = useSelector((state) => state.tasks.value);
@@ -34,28 +33,46 @@ function App() {
       <main>
         <Paper elevation={1} sx={{ margin: 5 }}>
           <div className="todo_new_entry">
-            <TextField
-              id="todo_new_entry_field"
-              label="New Entry"
-              variant="outlined"
-              sx={{ margin: 3, width: "90%" }}
-              onChange={(e) => setDescription(e.target.value)}
+            <img
+              src={girlDecor}
+              alt="girl graphic sitting"
+              className="header-graphic"
             />
-            <Button
-              variant="contained"
-              sx={{ margin: 3 }}
-              onClick={() => {
-                dispatch(
-                  addTask({
-                    id: tasks[tasks.length - 1].id + 1,
-                    completed: false,
-                    description,
-                  })
-                );
-              }}
-            >
-              Submit
-            </Button>
+            <Box sx={{ margin: 3, width: "60%" }}>
+              <Typography
+                variant="h5"
+                mb={3}
+                className="roboto-bold"
+                color={"primary"}
+              >
+                React Redux To Do List
+              </Typography>
+              <TextField
+                id="todo_new_entry_field"
+                label="New Entry"
+                variant="outlined"
+                value={description}
+                fullWidth
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <Button
+                color="secondary"
+                variant="contained"
+                sx={{ margin: 3 }}
+                onClick={() => {
+                  dispatch(
+                    addTask({
+                      id: tasks.length < 1 ? 1 : tasks[tasks.length - 1].id + 1,
+                      completed: false,
+                      description,
+                    })
+                  );
+                  setDescription("");
+                }}
+              >
+                Submit
+              </Button>
+            </Box>
           </div>
         </Paper>
 
@@ -79,7 +96,7 @@ function App() {
         </Stack>
 
         <Box mt={3}>
-          <Typography variant="caption" color={"GrayText"}>
+          <Typography variant="caption" color={"white"}>
             Completed Tasks
           </Typography>
         </Box>

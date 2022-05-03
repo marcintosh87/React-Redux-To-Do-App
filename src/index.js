@@ -5,7 +5,17 @@ import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import tasksReducer from "./features/Tasks.js";
-
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#5E2390",
+    },
+    secondary: {
+      main: "#FFB207",
+    },
+  },
+});
 const store = configureStore({
   reducer: {
     tasks: tasksReducer,
@@ -14,8 +24,10 @@ const store = configureStore({
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );

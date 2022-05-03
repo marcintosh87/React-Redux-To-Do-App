@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.todo_new_entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.todo_new_entry button {
+  height: 20%;
+}
+
+.task_entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

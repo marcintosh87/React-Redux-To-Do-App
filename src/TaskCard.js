@@ -61,7 +61,12 @@ export default function TaskCard({ completed, description, id }) {
             </Button>
           </Stack>
         ) : (
-          <Typography variant="body1" align="left" flex={1}>
+          <Typography
+            variant="body1"
+            align="left"
+            flex={1}
+            style={completed ? { textDecoration: "line-through" } : null}
+          >
             {description}
           </Typography>
         )}

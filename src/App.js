@@ -71,7 +71,6 @@ function App() {
                     })
                   );
                   setDescription("");
-                  console.log(tasks.length - 1);
                 }}
               >
                 Submit

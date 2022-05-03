@@ -45,6 +45,7 @@ export default function TaskCard({ completed, description, id }) {
               id="standard-basic"
               label={`Previous entry: ${description}`}
               variant="standard"
+              inputProps={{ maxLength: 60 }}
               fullWidth
               flex={1}
               onChange={(e) => setNewDescription(e.target.value)}
@@ -63,6 +64,7 @@ export default function TaskCard({ completed, description, id }) {
         ) : (
           <Typography
             variant="body1"
+            noWrap
             align="left"
             flex={1}
             style={completed ? { textDecoration: "line-through" } : null}

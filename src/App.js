@@ -47,12 +47,15 @@ function App() {
               >
                 React Redux To Do List
               </Typography>
+
+              <Typography variant="caption">{`60 Character Limit`}</Typography>
               <TextField
                 id="todo_new_entry_field"
                 label="New Entry"
                 variant="outlined"
                 value={description}
                 fullWidth
+                inputProps={{ maxLength: 60 }}
                 onChange={(e) => setDescription(e.target.value)}
               />
               <Button
@@ -62,12 +65,13 @@ function App() {
                 onClick={() => {
                   dispatch(
                     addTask({
-                      id: tasks.length < 1 ? 1 : tasks[tasks.length - 1].id + 1,
+                      id: tasks.length + 1,
                       completed: false,
                       description,
                     })
                   );
                   setDescription("");
+                  console.log(tasks.length - 1);
                 }}
               >
                 Submit

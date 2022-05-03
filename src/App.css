@@ -5,10 +5,12 @@
 /* Logo Green #446F67 */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+body {
+  background-color: #5e2390;
+}
 .App {
   text-align: center;
-  background-color: #5e2390;
-  height: 1200px;
 }
 
 .App-logo {

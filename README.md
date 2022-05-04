@@ -8,7 +8,7 @@ React Redux To Do App
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Status](#status)
+- [Stretch Goals](#stretch-goals)
 
 ## About The App
 
@@ -16,11 +16,11 @@ This is a simple To-Do App using React and Redux to store states.
 
 ## Screenshots
 
-`![Writing](https://i.imgur.com/RiGUw2i.png)`
+![alt text](https://i.imgur.com/RiGUw2i.png)
 
 ## Technologies
 
-I used `React`, `css`, 'Redux'
+I used `React`, `css`, `Redux`
 
 ## Setup
 
